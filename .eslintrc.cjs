@@ -5,7 +5,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es6: true
   },
   // 指定如何解析语法
   parser: "vue-eslint-parser",
@@ -16,15 +16,11 @@ module.exports = {
     sourceType: "module",
     jsxPragma: "React",
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   // 继承某些已有的规则
-  extends: [
-    "plugin:vue/vue3-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["plugin:vue/vue3-recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
   /**
    * "off" 或 0    ==>  关闭规则
    * "warn" 或 1   ==>  打开的规则作为警告（不影响代码执行）
@@ -60,6 +56,6 @@ module.exports = {
     "vue/no-v-html": "off", // 禁止使用 v-html
     "vue/require-default-prop": "off", // 此规则要求为每个 prop 为必填时，必须提供默认值
     "vue/multi-word-component-names": "off", // 要求组件名称始终为 “-” 链接的单词
-    "vue/no-setup-props-destructure": "off", // 禁止解构 props 传递给 setup
-  },
+    "vue/no-setup-props-destructure": "off" // 禁止解构 props 传递给 setup
+  }
 };

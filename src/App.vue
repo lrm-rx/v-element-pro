@@ -1,30 +1,28 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+import Button from "./components/Button/Button.vue";
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Button>Test Button</Button>
+  <Button plain>plain Button</Button>
+  <Button round>round Button</Button>
+  <Button circle>lk</Button>
+  <Button disabled>disabled Button</Button>
+  <Button type="primary">primary Button</Button>
+  <Button type="success">success Button</Button>
+  <Button type="info">info Button</Button>
+  <Button type="warning">warning Button</Button>
+  <Button type="danger">danger Button</Button>
+
+  <Button plain type="primary">primary Button</Button>
+  <Button plain type="success">success Button</Button>
+  <Button plain type="info">info Button</Button>
+  <Button plain type="warning">warning Button</Button>
+  <Button plain type="danger">danger Button</Button>
+
+  <Button size="large">large Button</Button>
+  <Button size="small">small Button</Button>
+  <a href="#">aaa</a>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>

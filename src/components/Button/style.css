@@ -1,0 +1,127 @@
+.lk-button {
+  --lk-button-font-weight: var(--lk-font-weight-primary);
+  --lk-button-border-color: var(--lk-border-color);
+  --lk-button-bg-color: var(--lk-fill-color-blank);
+  --lk-button-text-color: var(--lk-text-color-regular);
+  --lk-button-disabled-text-color: var(--lk-disabled-text-color);
+  --lk-button-disabled-bg-color: var(--lk-fill-color-blank);
+  --lk-button-disabled-border-color: var(--lk-border-color-light);
+  --lk-button-hover-text-color: var(--lk-color-primary);
+  --lk-button-hover-bg-color: var(--lk-color-primary-light-9);
+  --lk-button-hover-border-color: var(--lk-color-primary-light-7);
+  --lk-button-active-text-color: var(--lk-button-hover-text-color);
+  --lk-button-active-border-color: var(--lk-color-primary);
+  --lk-button-active-bg-color: var(--lk-button-hover-bg-color);
+  --lk-button-outline-color: var(--lk-color-primary-light-5);
+  --lk-button-active-color: var(--lk-text-color-primary);
+}
+.lk-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--lk-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--lk-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--lk-button-bg-color);
+  border: var(--lk-border);
+  border-color: var(--lk-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--lk-font-size-base);
+  border-radius: var(--lk-border-radius-base);
+  & + & {
+    margin-left: 12px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--lk-button-hover-text-color);
+    border-color: var(--lk-button-hover-border-color);
+    background-color: var(--lk-button-hover-bg-color);
+    outline: none;
+  }
+  &:active {
+    color: var(--lk-button-active-text-color);
+    border-color: var(--lk-button-active-border-color);
+    background-color: var(--lk-button-active-bg-color);
+    outline: none;
+  }
+  &.is-plain {
+    --lk-button-hover-text-color: var(--lk-color-primary);
+    --lk-button-hover-bg-color: var(--lk-fill-color-blank);
+    --lk-button-hover-border-color: var(--lk-color-primary);
+  }
+  /*round*/
+  &.is-round {
+    border-radius: var(--lk-border-radius-round);
+  }
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+  /*disabled*/
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--lk-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--lk-button-disabled-bg-color);
+    border-color: var(--lk-button-disabled-border-color);
+  }
+  [class*="lk-icon"] + span {
+    margin-left: 6px;
+  }
+}
+@each $val in primary, success, warning, info, danger {
+  .lk-button--$(val) {
+    --lk-button-text-color: var(--lk-color-white);
+    --lk-button-bg-color: var(--lk-color-$(val));
+    --lk-button-border-color: var(--lk-color-$(val));
+    --lk-button-outline-color: var(--lk-color-$(val)-light-5);
+    --lk-button-active-color: var(--lk-color-$(val)-dark-2);
+    --lk-button-hover-text-color: var(--lk-color-white);
+    --lk-button-hover-bg-color: var(--lk-color-$(val)-light-3);
+    --lk-button-hover-border-color: var(--lk-color-$(val)-light-3);
+    --lk-button-active-bg-color: var(--lk-color-$(val)-dark-2);
+    --lk-button-active-border-color: var(--lk-color-$(val)-dark-2);
+    --lk-button-disabled-text-color: var(--lk-color-white);
+    --lk-button-disabled-bg-color: var(--lk-color-$(val)-light-5);
+    --lk-button-disabled-border-color: var(--lk-color-$(val)-light-5);
+  }
+  .lk-button--$(val).is-plain {
+    --lk-button-text-color: var(--lk-color-$(val));
+    --lk-button-bg-color: var(--lk-color-$(val)-light-9);
+    --lk-button-border-color: var(--lk-color-$(val)-light-5);
+    --lk-button-hover-text-color: var(--lk-color-white);
+    --lk-button-hover-bg-color: var(--lk-color-$(val));
+    --lk-button-hover-border-color: var(--lk-color-$(val));
+    --lk-button-active-text-color: var(--lk-color-white);
+  }
+}
+.lk-button--large {
+  --lk-button-size: 40px;
+  height: var(--lk-button-size);
+  padding: 12px 19px;
+  font-size: var(--lk-font-size-base);
+  border-radius: var(--lk-border-radius-base);
+}
+.lk-button--small {
+  --lk-button-size: 24px;
+  height: var(--lk-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--lk-border-radius-base) - 1px);
+}

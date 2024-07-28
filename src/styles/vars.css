@@ -1,0 +1,67 @@
+:root {
+  /* colors */
+  --lk-color-white: #ffffff;
+  --lk-color-black: #000000;
+  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+
+  --lk-bg-color: #ffffff;
+  --lk-bg-color-page: #f2f3f5;
+  --lk-bg-color-overlay: #ffffff;
+  --lk-text-color-primary: #303133;
+  --lk-text-color-regular: #606266;
+  --lk-text-color-secondary: #909399;
+  --lk-text-color-placeholder: #a8abb2;
+  --lk-text-color-disabled: #c0c4cc;
+  --lk-border-color: #dcdfe6;
+  --lk-border-color-light: #e4e7ed;
+  --lk-border-color-lighter: #ebeef5;
+  --lk-border-color-extra-light: #f2f6fc;
+  --lk-border-color-dark: #d4d7de;
+  --lk-border-color-darker: #cdd0d6;
+  --lk-fill-color: #f0f2f5;
+  --lk-fill-color-light: #f5f7fa;
+  --lk-fill-color-lighter: #fafafa;
+  --lk-fill-color-extra-light: #fafcff;
+  --lk-fill-color-dark: #ebedf0;
+  --lk-fill-color-darker: #e6e8eb;
+  --lk-fill-color-blank: #ffffff;
+
+  /* border */
+  --lk-border-width: 1px;
+  --lk-border-style: solid;
+  --lk-border-color-hover: var(--lk-text-color-disabled);
+  --lk-border: var(--lk-border-width) var(--lk-border-style) var(--lk-border-color);
+  --lk-border-radius-base: 4px;
+  --lk-border-radius-small: 2px;
+  --lk-border-radius-round: 20px;
+  --lk-border-radius-circle: 100%;
+
+  /*font*/
+  --lk-font-size-extra-large: 20px;
+  --lk-font-size-large: 18px;
+  --lk-font-size-medium: 16px;
+  --lk-font-size-base: 14px;
+  --lk-font-size-small: 13px;
+  --lk-font-size-extra-small: 12px;
+  --lk-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1",
+    Arial, sans-serif;
+  --lk-font-weight-primary: 500;
+
+  /*disabled*/
+  --lk-disabled-bg-color: var(--lk-fill-color-light);
+  --lk-disabled-text-color: var(--lk-text-color-placeholder);
+  --lk-disabled-border-color: var(--lk-border-color-light);
+
+  /*animation*/
+  --lk-transition-duration: 0.3s;
+  --lk-transition-duration-fast: 0.2s;
+}
+
+@each $val, $color in var(--colors) {
+  --lk-color-$(val): $(color);
+  @for $i from 3 to 9 by 2 {
+    --lk-color-$(val)-light-$(i): mix(#fff, $(color), .$(i));
+  }
+  --lk-color-$(val)-light-8: mix(#fff, $(color), 0.8);
+  --lk-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+}
