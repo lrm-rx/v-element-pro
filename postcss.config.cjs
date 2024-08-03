@@ -1,5 +1,5 @@
 module.exports = {
-  plugin: [
+  plugins: [
     require("postcss-each-variables"),
     require("postcss-nested"),
     require("postcss-each")({
