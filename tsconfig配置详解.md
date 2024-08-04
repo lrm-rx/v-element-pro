@@ -55,3 +55,21 @@
 }
 
 ```
+
+# 问题记录
+
+### 解决 vite5 无法找到模块“vite-plugin-eslint”的声明文件。
+
+> 到源依赖包的package.json中将相应的配置做替换
+
+```javascript
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": "./dist/index.js"
+    }
+  },
+```

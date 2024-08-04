@@ -11,5 +11,9 @@ export default defineConfig({
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url))
     }
+  },
+  server: {
+    // 开启热更新（Hot Module Replacement）
+    hmr: true
   }
 });

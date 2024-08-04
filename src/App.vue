@@ -1,5 +1,12 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import Button from "./components/Button/Button.vue";
+import Collapse from "./components/Collapse/Collapse.vue";
+import Item from "./components/Collapse/CollapseItem.vue";
+const openedValue = ref(["a"]);
+setTimeout(() => {
+  // openedValue.value = ["a", "b"];
+}, 1000);
 </script>
 
 <template>
@@ -22,7 +29,23 @@ import Button from "./components/Button/Button.vue";
 
   <Button size="large">large Button</Button>
   <Button size="small">small Button</Button>
-  <a href="#">aaa</a>
+
+  <Collapse v-model="openedValue" accordion>
+    <Item name="a">
+      <template v-slot:title>
+        <h1>a title</h1>
+      </template>
+      <h1>a content</h1>
+      <div>1111111111111</div>
+    </Item>
+    <Item name="b" title="b title">
+      <div>b content</div>
+    </Item>
+    <Item name="c" title="c title">
+      <div>c content</div>
+    </Item>
+  </Collapse>
+  <div>{{ openedValue }}</div>
 </template>
 
 <style scoped></style>
