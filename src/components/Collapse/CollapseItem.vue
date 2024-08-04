@@ -5,8 +5,17 @@
       'is-disabled': disabled
     }"
   >
-    <div class="lk-collapse-item__header" :id="`item-header-${name}`" @click="handleClick">
+    <div
+      class="lk-collapse-item__header"
+      :class="{
+        'is-disabled': disabled,
+        'is-active': isActive
+      }"
+      :id="`item-header-${name}`"
+      @click="handleClick"
+    >
       <slot name="title"> {{ title }}</slot>
+      <Icon icon="angle-right" class="header-angle" />
     </div>
     <Transition name="slide" v-on="transitionEvents">
       <div class="lk-collapse-item__wrapper" v-show="isActive">
@@ -20,6 +29,7 @@
 
 <script setup lang="ts">
 import { inject, computed } from "vue";
+import Icon from "../Icon/Icon.vue";
 import type { CollapseItemProps } from "./types";
 import { collapseContextKey } from "./types";
 defineOptions({
@@ -27,7 +37,7 @@ defineOptions({
 });
 const props = defineProps<CollapseItemProps>();
 const collapseContext = inject(collapseContextKey);
-const isActive = computed(() => collapseContext?.activeNames.value.includes(props.name));
+const isActive = computed(() => collapseContext?.activeNames.value?.includes(props.name));
 const handleClick = () => {
   if (props.disabled) return;
   collapseContext?.handleItemClick(props.name);
@@ -58,4 +68,10 @@ const transitionEvents: Record<string, (el: HTMLElement) => void> = {
 };
 </script>
 
-<style scoped></style>
+<style>
+.is-disabled {
+  color: var(--lk-collapse-disabled-text-color);
+  cursor: not-allowed;
+  background-image: none;
+}
+</style>

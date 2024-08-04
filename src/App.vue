@@ -3,9 +3,10 @@ import { ref } from "vue";
 import Button from "./components/Button/Button.vue";
 import Collapse from "./components/Collapse/Collapse.vue";
 import Item from "./components/Collapse/CollapseItem.vue";
+import Icon from "./components/Icon/Icon.vue";
 const openedValue = ref(["a"]);
 setTimeout(() => {
-  // openedValue.value = ["a", "b"];
+  openedValue.value = ["a", "b"];
 }, 1000);
 </script>
 
@@ -26,11 +27,11 @@ setTimeout(() => {
   <Button plain type="info">info Button</Button>
   <Button plain type="warning">warning Button</Button>
   <Button plain type="danger">danger Button</Button>
+  <hr />
+  <Button size="large" loading>loading</Button>
+  <Button size="large" icon="arrow-up">small Button</Button>
 
-  <Button size="large">large Button</Button>
-  <Button size="small">small Button</Button>
-
-  <Collapse v-model="openedValue" accordion>
+  <Collapse v-model="openedValue">
     <Item name="a">
       <template v-slot:title>
         <h1>a title</h1>
@@ -41,11 +42,11 @@ setTimeout(() => {
     <Item name="b" title="b title">
       <div>b content</div>
     </Item>
-    <Item name="c" title="c title">
+    <Item name="c" title="c title" disabled>
       <div>c content</div>
     </Item>
   </Collapse>
-  <div>{{ openedValue }}</div>
+  <Icon icon="fa-solid fa-user-secret"></Icon>
 </template>
 
-<style scoped></style>
+<style></style>
