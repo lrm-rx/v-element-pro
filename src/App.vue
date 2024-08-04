@@ -4,6 +4,7 @@ import Button from "./components/Button/Button.vue";
 import Collapse from "./components/Collapse/Collapse.vue";
 import Item from "./components/Collapse/CollapseItem.vue";
 import Icon from "./components/Icon/Icon.vue";
+import Alert from "./components/Alert/Alert.vue";
 const openedValue = ref(["a"]);
 setTimeout(() => {
   openedValue.value = ["a", "b"];
@@ -47,6 +48,13 @@ setTimeout(() => {
     </Item>
   </Collapse>
   <Icon icon="fa-solid fa-user-secret"></Icon>
+  <Alert center show-icon type="success" title="Success Alert" description="Success Description" />
+  <hr />
+  <Alert show-icon type="warning" title="Warning Alert" description="Warning Description" close-text="关闭" />
+  <hr />
+  <Alert show-icon type="info" title="Info Alert" description="Info Description" close-text="close" />
+  <hr />
+  <Alert show-icon type="danger" title="Error Alert" description="Error Description" :closable="false" />
 </template>
 
 <style></style>
