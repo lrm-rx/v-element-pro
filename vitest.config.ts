@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [vue(), vueJsx()],
   test: {
     globals: true,
-    environment: "jsdom"
+    environment: "jsdom",
+    include: ["src/**/*.test.{ts,tsx}"]
   }
 });
