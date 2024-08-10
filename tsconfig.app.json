@@ -18,6 +18,10 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "preserve",
+    "baseUrl": ".", // 这里设置为项目根目录
+    "paths": {
+      "@/*": ["src/*"] // 这里配置@指向src目录下的所有文件
+    },
 
     /* Linting */
     "strict": true,

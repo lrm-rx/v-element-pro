@@ -1,19 +1,32 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Button from "./components/Button/Button.vue";
-import Collapse from "./components/Collapse/Collapse.vue";
-import Item from "./components/Collapse/CollapseItem.vue";
-import Icon from "./components/Icon/Icon.vue";
-import Alert from "./components/Alert/Alert.vue";
+import type { Options } from "@popperjs/core";
+import Button from "@/components/Button/Button.vue";
+import Collapse from "@/components/Collapse/Collapse.vue";
+import Item from "@/components/Collapse/CollapseItem.vue";
+// import Icon from "@/components/Icon/Icon.vue";
+// import Alert from "@/components/Alert/Alert.vue";
+import type { TooltipInstance } from "@/components/Tooltip/types";
+import Tooltip from "@/components/Tooltip/Tooltip.vue";
 const openedValue = ref(["a"]);
+const trigger = ref<any>("click");
+const tooltipRef = ref<TooltipInstance | null>();
+const options: Partial<Options> = { placement: "right-start", strategy: "fixed" };
+const open = () => {
+  tooltipRef.value?.show();
+};
+const close = () => {
+  tooltipRef.value?.hide();
+};
 setTimeout(() => {
-  openedValue.value = ["a", "b"];
-}, 1000);
+  // openedValue.value = ["a", "b"];
+  // trigger.value = "hover";
+}, 2000);
 </script>
 
 <template>
-  <Button>Test Button</Button>
-  <Button plain>plain Button</Button>
+  <Button @click="open">open tooltip Button</Button>
+  <Button @click="close" plain>open tooltip Button</Button>
   <Button round>round Button</Button>
   <Button circle>lk</Button>
   <Button disabled>disabled Button</Button>
@@ -47,14 +60,20 @@ setTimeout(() => {
       <div>c content</div>
     </Item>
   </Collapse>
-  <Icon icon="fa-solid fa-user-secret"></Icon>
+
+  <div style="padding: 20px">
+    <Tooltip content="123213" placement="right" :trigger="trigger" :popper-options="options">
+      <div style="width: 100px; height: 100px; background-color: deepskyblue">tooltip</div>
+    </Tooltip>
+  </div>
+  <!-- <Icon icon="fa-solid fa-user-secret"></Icon>
   <Alert center show-icon type="success" title="Success Alert" description="Success Description" />
   <hr />
   <Alert show-icon type="warning" title="Warning Alert" description="Warning Description" close-text="关闭" />
   <hr />
   <Alert show-icon type="info" title="Info Alert" description="Info Description" close-text="close" />
   <hr />
-  <Alert show-icon type="danger" title="Error Alert" description="Error Description" :closable="false" />
+  <Alert show-icon type="danger" title="Error Alert" description="Error Description" :closable="false" /> -->
 </template>
 
 <style></style>
