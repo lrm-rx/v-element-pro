@@ -9,3 +9,10 @@ declare module "vite-plugin-eslint" {
   function eslintPlugin(options?: any): Plugin;
   export default eslintPlugin;
 }
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elem: string]: unknown;
+    }
+  }
+}

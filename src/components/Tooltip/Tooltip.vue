@@ -21,6 +21,9 @@ import type { Instance } from "@popperjs/core";
 import { debounce } from "lodash-es";
 import { TooltipProps, TooltipEmits, TooltipInstance } from "./types";
 import useClickOutside from "@/hooks/useClickOutside";
+defineOptions({
+  name: "VTooltip"
+});
 const props = withDefaults(defineProps<TooltipProps>(), {
   placement: "bottom",
   trigger: "hover",
@@ -54,13 +57,11 @@ const popperOptions = computed(() => {
 });
 const open = () => {
   openTimes++;
-  console.log("open times", openTimes);
   isOpen.value = true;
   emits("visible-change", true);
 };
 const close = () => {
   closeTimes++;
-  console.log("close times", closeTimes);
   isOpen.value = false;
   emits("visible-change", false);
 };

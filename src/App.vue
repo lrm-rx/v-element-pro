@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, h } from "vue";
+import Dropdown from "@/components/Dropdown/Dropdown.vue";
+import type { MenuOption } from "@/components/Dropdown/types";
 import type { Options } from "@popperjs/core";
 import Button from "@/components/Button/Button.vue";
 import Collapse from "@/components/Collapse/Collapse.vue";
@@ -22,9 +24,31 @@ setTimeout(() => {
   // openedValue.value = ["a", "b"];
   // trigger.value = "hover";
 }, 2000);
+const options_a: MenuOption[] = [
+  { key: 1, label: h("b", "this is bold") },
+  { key: 2, label: "item2", disabled: true },
+  { key: 3, label: "item3", divided: true },
+  { key: 4, label: "item4" }
+];
+const inlineConsole = (...args: any) => {
+  console.log(...args);
+};
 </script>
 
 <template>
+  <header>
+    <Dropdown
+      placement="bottom"
+      :trigger="trigger"
+      :menu-options="options_a"
+      @visible-change="e => inlineConsole('visible change', e)"
+      @select="e => inlineConsole('select', e)"
+      manual
+      ref="tooltipRef"
+    >
+      <Button type="success">success Button</Button>
+    </Dropdown>
+  </header>
   <Button @click="open">open tooltip Button</Button>
   <Button @click="close" plain>open tooltip Button</Button>
   <Button round>round Button</Button>
@@ -63,7 +87,7 @@ setTimeout(() => {
 
   <div style="padding: 20px">
     <Tooltip content="123213" placement="right" :trigger="trigger" :popper-options="options">
-      <div style="width: 100px; height: 100px; background-color: deepskyblue">tooltip</div>
+      <Button type="primary">primary Button</Button>
     </Tooltip>
   </div>
   <!-- <Icon icon="fa-solid fa-user-secret"></Icon>
