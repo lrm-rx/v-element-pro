@@ -34,7 +34,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import type { Ref } from "vue";
 import type { TooltipInstance } from "../Tooltip/types";
 import type { DropdownProps, DropdownEmits, DropdownInstance, MenuOption } from "./types";
 import RenderVnode from "../Common/RenderVnode";
@@ -48,7 +47,7 @@ const props = withDefaults(defineProps<DropdownProps>(), {
 });
 const emits = defineEmits<DropdownEmits>();
 /** Tooltip 实例 */
-const tooltipRef = ref() as Ref<TooltipInstance>;
+const tooltipRef = ref<TooltipInstance | null>(null);
 const visibleChange = (e: boolean) => {
   emits("visible-change", e);
 };

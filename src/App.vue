@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { ref, h } from "vue";
+import { ref, h, onMounted } from "vue";
 import Dropdown from "@/components/Dropdown/Dropdown.vue";
 import type { MenuOption } from "@/components/Dropdown/types";
 import type { Options } from "@popperjs/core";
+import Message from "@/components/Message/Message.vue";
+import { createMessage } from "@/components/Message/method";
 import Button from "@/components/Button/Button.vue";
 import Collapse from "@/components/Collapse/Collapse.vue";
 import Item from "@/components/Collapse/CollapseItem.vue";
@@ -33,9 +35,14 @@ const options_a: MenuOption[] = [
 const inlineConsole = (...args: any) => {
   console.log(...args);
 };
+onMounted(() => {
+  createMessage({ message: "hello world", duration: 0 });
+  createMessage({ message: "hello world22222222", duration: 0 });
+});
 </script>
 
 <template>
+  <!-- <Message message="abc" show-close></Message> -->
   <header>
     <Dropdown
       placement="bottom"
