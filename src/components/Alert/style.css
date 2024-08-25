@@ -11,6 +11,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-top: 20px;
   padding: 8px 16px;
   background-color: var(--lk-alert-bg-color);
   --lk-alert-text-color-placeholder: var(--lk-text-color-placeholder);

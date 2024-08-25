@@ -24,12 +24,12 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  name: "VButton"
+});
 import { ref } from "vue";
 import Icon from "../Icon/Icon.vue";
 import type { ButtonProps } from "./types";
-defineOptions({
-  name: "VElButton"
-});
 withDefaults(defineProps<ButtonProps>(), {
   nativeType: "button"
 });
