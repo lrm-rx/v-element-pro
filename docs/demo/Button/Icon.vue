@@ -1,9 +1,9 @@
 <template>
   <div class="icon">
-    <vk-button type="primary" icon="pen-to-square" />
-    <vk-button type="primary" icon="share-nodes" />
-    <vk-button type="primary" icon="trash-can" />
-    <vk-button type="primary" icon="search">Search</vk-button>
-    <vk-button type="primary"> Upload <vk-icon icon="upload" /> </vk-button>
+    <v-button type="primary" icon="pen-to-square" />
+    <v-button type="primary" icon="share-nodes" />
+    <v-button type="primary" icon="trash-can" />
+    <v-button type="primary" icon="search">Search</v-button>
+    <v-button type="primary"> Upload <v-icon icon="upload" /> </v-button>
   </div>
 </template>

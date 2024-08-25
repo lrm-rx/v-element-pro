@@ -1,5 +1,5 @@
 <template>
   <div class="loading">
-    <vk-button type="primary" loading> Loading... </vk-button>
+    <v-button type="primary" loading> Loading... </v-button>
   </div>
 </template>

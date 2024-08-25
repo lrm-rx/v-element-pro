@@ -1,8 +1,8 @@
 :root {
-  --vp-c-brand: var(--vk-color-primary);
-  --vp-c-brand-light: var(--vk-color-primary-light-3);
-  --vp-c-brand-lighter: var(--vk-color-primary-light-5);
-  --vp-c-brand-dark: var(--vk-color-primary-dark-2);
+  --vp-c-brand: var(--vl-color-primary);
+  --vp-c-brand-light: var(--vl-color-primary-light-3);
+  --vp-c-brand-lighter: var(--vl-color-primary-light-5);
+  --vp-c-brand-dark: var(--vl-color-primary-dark-2);
   --vp-c-brand-darker: #265f99;
   --vp-layout-max-width: 1640px;
   --vp-code-font-size: 0.97em;
@@ -38,8 +38,7 @@ p {
   max-width: none;
 }
 
-.vitepress-demo-preview__element-plus__container
-  > .vitepress-demo-preview-preview {
+.vitepress-demo-preview__element-plus__container > .vitepress-demo-preview-preview {
   padding: 20px 20px;
 }
 

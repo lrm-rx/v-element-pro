@@ -1,38 +1,38 @@
 <template>
   <div class="basic block">
-    <vk-button>hello</vk-button>
-    <vk-button type="primary">Primary</vk-button>
-    <vk-button type="success">Success</vk-button>
-    <vk-button type="warning">Warning</vk-button>
-    <vk-button type="danger">Danger</vk-button>
-    <vk-button type="info">Info</vk-button>
+    <v-button>hello</v-button>
+    <v-button type="primary">Primary</v-button>
+    <v-button type="success">Success</v-button>
+    <v-button type="warning">Warning</v-button>
+    <v-button type="danger">Danger</v-button>
+    <v-button type="info">Info</v-button>
   </div>
 
   <div class="plain block">
-    <vk-button plain>hello</vk-button>
-    <vk-button type="primary" plain>Primary</vk-button>
-    <vk-button type="success" plain>Success</vk-button>
-    <vk-button type="warning" plain>Warning</vk-button>
-    <vk-button type="danger" plain>Danger</vk-button>
-    <vk-button type="info" plain>Info</vk-button>
+    <v-button plain>hello</v-button>
+    <v-button type="primary" plain>Primary</v-button>
+    <v-button type="success" plain>Success</v-button>
+    <v-button type="warning" plain>Warning</v-button>
+    <v-button type="danger" plain>Danger</v-button>
+    <v-button type="info" plain>Info</v-button>
   </div>
 
   <div class="round block">
-    <vk-button round>hello</vk-button>
-    <vk-button type="primary" round>Primary</vk-button>
-    <vk-button type="success" round>Success</vk-button>
-    <vk-button type="warning" round>Warning</vk-button>
-    <vk-button type="danger" round>Danger</vk-button>
-    <vk-button type="info" round>Info</vk-button>
+    <v-button round>hello</v-button>
+    <v-button type="primary" round>Primary</v-button>
+    <v-button type="success" round>Success</v-button>
+    <v-button type="warning" round>Warning</v-button>
+    <v-button type="danger" round>Danger</v-button>
+    <v-button type="info" round>Info</v-button>
   </div>
 
   <div class="circle">
-    <vk-button circle><vk-icon icon="star" /></vk-button>
-    <vk-button type="primary" circle><vk-icon icon="star" /></vk-button>
-    <vk-button type="success" circle><vk-icon icon="star" /></vk-button>
-    <vk-button type="warning" circle><vk-icon icon="star" /></vk-button>
-    <vk-button type="danger" circle><vk-icon icon="star" /></vk-button>
-    <vk-button type="info" circle><vk-icon icon="star" /></vk-button>
+    <v-button circle><v-icon icon="star" /></v-button>
+    <v-button type="primary" circle><v-icon icon="star" /></v-button>
+    <v-button type="success" circle><v-icon icon="star" /></v-button>
+    <v-button type="warning" circle><v-icon icon="star" /></v-button>
+    <v-button type="danger" circle><v-icon icon="star" /></v-button>
+    <v-button type="info" circle><v-icon icon="star" /></v-button>
   </div>
 </template>
 <style>

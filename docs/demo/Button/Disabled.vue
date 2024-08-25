@@ -1,19 +1,19 @@
 <template>
   <div class="disabled block">
-    <vk-button disabled>hello</vk-button>
-    <vk-button type="primary" disabled>Primary</vk-button>
-    <vk-button type="success" disabled>Success</vk-button>
-    <vk-button type="warning" disabled>Warning</vk-button>
-    <vk-button type="danger" disabled>Danger</vk-button>
-    <vk-button type="info" disabled>Info</vk-button>
+    <v-button disabled>hello</v-button>
+    <v-button type="primary" disabled>Primary</v-button>
+    <v-button type="success" disabled>Success</v-button>
+    <v-button type="warning" disabled>Warning</v-button>
+    <v-button type="danger" disabled>Danger</v-button>
+    <v-button type="info" disabled>Info</v-button>
   </div>
 
   <div class="disabled-plain">
-    <vk-button plain disabled>hello</vk-button>
-    <vk-button type="primary" plain disabled>Primary</vk-button>
-    <vk-button type="success" plain disabled>Success</vk-button>
-    <vk-button type="warning" plain disabled>Warning</vk-button>
-    <vk-button type="danger" plain disabled>Danger</vk-button>
-    <vk-button type="info" plain disabled>Info</vk-button>
+    <v-button plain disabled>hello</v-button>
+    <v-button type="primary" plain disabled>Primary</v-button>
+    <v-button type="success" plain disabled>Success</v-button>
+    <v-button type="warning" plain disabled>Warning</v-button>
+    <v-button type="danger" plain disabled>Danger</v-button>
+    <v-button type="info" plain disabled>Info</v-button>
   </div>
 </template>
