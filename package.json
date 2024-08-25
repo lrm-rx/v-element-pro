@@ -11,7 +11,10 @@
     "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md,cjs}\"",
     "lint:lint-staged": "lint-staged",
     "prepare": "husky install",
-    "commit": "git add -A && czg && git push"
+    "commit": "git add -A && czg && git push",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -31,6 +34,8 @@
     "@typescript-eslint/parser": "7.14.1",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.2.3",
     "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.19",
     "cz-git": "1.9.2",
