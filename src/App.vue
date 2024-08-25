@@ -36,8 +36,12 @@ const inlineConsole = (...args: any) => {
   console.log(...args);
 };
 onMounted(() => {
-  createMessage({ message: "hello world", duration: 0 });
-  createMessage({ message: "hello world22222222", duration: 0 });
+  const instance = createMessage({ message: "hello world", duration: 0 });
+  createMessage({ message: "hello 111", duration: 0 });
+  createMessage({ message: "hello 222", duration: 0, showClose: true });
+  setTimeout(() => {
+    instance.destroy();
+  }, 2000);
 });
 </script>
 
