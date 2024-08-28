@@ -5,7 +5,7 @@ description: Button 组件文档
 
 # Button 按钮
 
-常用的操作按钮
+常用按钮
 
 ## 基础用法
 
