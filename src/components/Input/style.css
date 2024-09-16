@@ -1,93 +1,93 @@
-.vl-input {
-  --vl-input-text-color: var(--vl-text-color-regular);
-  --vl-input-border: var(--vl-border);
-  --vl-input-hover-border: var(--vl-border-color-hover);
-  --vl-input-focus-border: var(--vl-color-primary);
-  --vl-input-transparent-border: 0 0 0 1px transparent inset;
-  --vl-input-border-color: var(--vl-border-color);
-  --vl-input-border-radius: var(--vl-border-radius-base);
-  --vl-input-bg-color: var(--vl-fill-color-blank);
-  --vl-input-icon-color: var(--vl-text-color-placeholder);
-  --vl-input-placeholder-color: var(--vl-text-color-placeholder);
-  --vl-input-hover-border-color: var(--vl-border-color-hover);
-  --vl-input-clear-hover-color: var(--vl-text-color-secondary);
-  --vl-input-focus-border-color: var(--vl-color-primary);
+.lk-input {
+  --lk-input-text-color: var(--lk-text-color-regular);
+  --lk-input-border: var(--lk-border);
+  --lk-input-hover-border: var(--lk-border-color-hover);
+  --lk-input-focus-border: var(--lk-color-primary);
+  --lk-input-transparent-border: 0 0 0 1px transparent inset;
+  --lk-input-border-color: var(--lk-border-color);
+  --lk-input-border-radius: var(--lk-border-radius-base);
+  --lk-input-bg-color: var(--lk-fill-color-blank);
+  --lk-input-icon-color: var(--lk-text-color-placeholder);
+  --lk-input-placeholder-color: var(--lk-text-color-placeholder);
+  --lk-input-hover-border-color: var(--lk-border-color-hover);
+  --lk-input-clear-hover-color: var(--lk-text-color-secondary);
+  --lk-input-focus-border-color: var(--lk-color-primary);
 }
 
-.vl-input {
-  --vl-input-height: var(--vl-component-size);
+.lk-input {
+  --lk-input-height: var(--lk-component-size);
   position: relative;
-  font-size: var(--vl-font-size-base);
+  font-size: var(--lk-font-size-base);
   display: inline-flex;
   width: 100%;
-  line-height: var(--vl-input-height);
+  line-height: var(--lk-input-height);
   box-sizing: border-box;
   vertical-align: middle;
   &.is-disabled {
     cursor: not-allowed;
-    .vl-input__wrapper {
-      background-color: var(--vl-disabled-bg-color);
-      box-shadow: 0 0 0 1px var(--vl-disabled-border-color) inset;
+    .lk-input__wrapper {
+      background-color: var(--lk-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--lk-disabled-border-color) inset;
     }
-    .vl-input__inner {
-      color: var(--vl-disabled-text-color);
-      -webkit-text-fill-color: var(--vl-disabled-text-color);
+    .lk-input__inner {
+      color: var(--lk-disabled-text-color);
+      -webkit-text-fill-color: var(--lk-disabled-text-color);
       cursor: not-allowed;
     }
-    .vl-textarea__inner {
-      background-color: var(--vl-disabled-bg-color);
-      box-shadow: 0 0 0 1px var(--vl-disabled-border-color) inset;
-      color: var(--vl-disabled-text-color);
-      -webkit-text-fill-color: var(--vl-disabled-text-color);
+    .lk-textarea__inner {
+      background-color: var(--lk-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--lk-disabled-border-color) inset;
+      color: var(--lk-disabled-text-color);
+      -webkit-text-fill-color: var(--lk-disabled-text-color);
       cursor: not-allowed;
     }
   }
   &.is-prepend {
-    > .vl-input__wrapper {
+    > .lk-input__wrapper {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
   }
   &.is-append {
-    > .vl-input__wrapper {
+    > .lk-input__wrapper {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
   }
 }
 
-.vl-input--large {
-  --vl-input-height: var(--vl-component-size-large);
+.lk-input--large {
+  --lk-input-height: var(--lk-component-size-large);
   font-size: 14px;
-  .vl-input__wrapper {
+  .lk-input__wrapper {
     padding: 1px 15px;
-    .vl-input__inner {
-      --vl-input-inner-height: calc(var(--vl-input-height, 40px) - 2px);
+    .lk-input__inner {
+      --lk-input-inner-height: calc(var(--lk-input-height, 40px) - 2px);
     }
   }
 }
-.vl-input--small {
-  --vl-input-height: var(--vl-component-size-small);
+.lk-input--small {
+  --lk-input-height: var(--lk-component-size-small);
   font-size: 12px;
-  .vl-input__wrapper {
+  .lk-input__wrapper {
     padding: 1px 7px;
-    .vl-input__inner {
-      --vl-input-inner-height: calc(var(--vl-input-height, 24px) - 2px);
+    .lk-input__inner {
+      --lk-input-inner-height: calc(var(--lk-input-height, 24px) - 2px);
     }
   }
 }
-.vl-input__prefix,
-.vl-input__suffix {
+.lk-input__prefix,
+.lk-input__suffix {
   display: inline-flex;
   white-space: nowrap;
   flex-shrink: 0;
   flex-wrap: nowrap;
   height: 100%;
   text-align: center;
-  color: var(--vl-input-icon-color, var(--vl-text-color-placeholder));
-  transition: all var(--vl-transition-duration);
+  color: var(--lk-input-icon-color, var(--lk-text-color-placeholder));
+  transition: all var(--lk-transition-duration);
 }
-.vl-input__prefix {
+.lk-input__prefix {
   > :first-child {
     margin-left: 0px !important;
   }
@@ -95,7 +95,7 @@
     margin-right: 8px !important;
   }
 }
-.vl-input__suffix {
+.lk-input__suffix {
   > :first-child {
     margin-left: 8px !important;
   }
@@ -103,50 +103,50 @@
     margin-right: 0px !important;
   }
 }
-.vl-input__prepend,
-.vl-input__append {
-  background-color: var(--vl-fill-color-light);
-  color: var(--vl-color-info);
+.lk-input__prepend,
+.lk-input__append {
+  background-color: var(--lk-fill-color-light);
+  color: var(--lk-color-info);
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  border-radius: var(--vl-input-border-radius);
+  border-radius: var(--lk-input-border-radius);
   padding: 0 20px;
   white-space: nowrap;
 }
-.vl-input__prepend {
+.lk-input__prepend {
   border-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow:
-    1px 0 0 0 var(--vl-input-border-color) inset,
-    0 1px 0 0 var(--vl-input-border-color) inset,
-    0 -1px 0 0 var(--vl-input-border-color) inset;
+    1px 0 0 0 var(--lk-input-border-color) inset,
+    0 1px 0 0 var(--lk-input-border-color) inset,
+    0 -1px 0 0 var(--lk-input-border-color) inset;
 }
-.vl-input__append {
+.lk-input__append {
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   box-shadow:
-    0 1px 0 0 var(--vl-input-border-color) inset,
-    0 -1px 0 0 var(--vl-input-border-color) inset,
-    -1px 0 0 0 var(--vl-input-border-color) inset;
-  & > .vl-input__wrapper {
+    0 1px 0 0 var(--lk-input-border-color) inset,
+    0 -1px 0 0 var(--lk-input-border-color) inset,
+    -1px 0 0 0 var(--lk-input-border-color) inset;
+  & > .lk-input__wrapper {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 }
 
-.vl-input--textarea {
+.lk-input--textarea {
   position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: bottom;
-  font-size: var(--vl-font-size-base);
+  font-size: var(--lk-font-size-base);
 }
-.vl-textarea__wrapper {
+.lk-textarea__wrapper {
   position: relative;
   display: block;
   resize: vertical;
@@ -156,73 +156,73 @@
   width: 100%;
   font-size: inherit;
   font-family: inherit;
-  color: var(--vl-input-text-color, var(--vl-text-color-regular));
-  background-color: var(--vl-input-bg-color, var(--vl-fill-color-blank));
+  color: var(--lk-input-text-color, var(--lk-text-color-regular));
+  background-color: var(--lk-input-bg-color, var(--lk-fill-color-blank));
   background-image: none;
   -webkit-appearance: none;
-  box-shadow: 0 0 0 1px var(--vl-input-border-color, var(--vl-border-color)) inset;
-  border-radius: var(--vl-input-border-radius, var(--vl-border-radius-base));
-  transition: var(--vl-transition-box-shadow);
+  box-shadow: 0 0 0 1px var(--lk-input-border-color, var(--lk-border-color)) inset;
+  border-radius: var(--lk-input-border-radius, var(--lk-border-radius-base));
+  transition: var(--lk-transition-box-shadow);
   border: none;
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 1px var(--vl-input-focus-border-color) inset;
+    box-shadow: 0 0 0 1px var(--lk-input-focus-border-color) inset;
   }
   &::placeholder {
-    color: var(--vl-input-placeholder-color);
+    color: var(--lk-input-placeholder-color);
   }
 }
-.vl-input__wrapper {
+.lk-input__wrapper {
   display: inline-flex;
   flex-grow: 1;
   align-items: center;
   justify-content: center;
   padding: 1px 11px;
-  background-color: var(--vl-input-bg-color, var(--vl-fill-color-blank));
+  background-color: var(--lk-input-bg-color, var(--lk-fill-color-blank));
   background-image: none;
-  border-radius: var(--vl-input-border-radius, var(--vl-border-radius-base));
-  transition: var(--vl-transition-box-shadow);
-  box-shadow: 0 0 0 1px var(--vl-input-border-color, var(--vl-border-color)) inset;
+  border-radius: var(--lk-input-border-radius, var(--lk-border-radius-base));
+  transition: var(--lk-transition-box-shadow);
+  box-shadow: 0 0 0 1px var(--lk-input-border-color, var(--lk-border-color)) inset;
   &:hover {
-    box-shadow: 0 0 0 1px var(--vl-input-hover-border-color) inset;
+    box-shadow: 0 0 0 1px var(--lk-input-hover-border-color) inset;
   }
   &.is-focus {
-    box-shadow: 0 0 0 1px var(--vl-input-focus-border-color) inset;
+    box-shadow: 0 0 0 1px var(--lk-input-focus-border-color) inset;
   }
-  .vl-input__inner {
-    --vl-input-inner-height: calc(var(--vl-input-height, 32px) - 2px);
+  .lk-input__inner {
+    --lk-input-inner-height: calc(var(--lk-input-height, 32px) - 2px);
     width: 100%;
     flex-grow: 1;
     -webkit-appearance: none;
-    color: var(--vl-input-text-color, var(--vl-text-color-regular));
+    color: var(--lk-input-text-color, var(--lk-text-color-regular));
     font-size: inherit;
-    height: var(--vl-input-inner-height);
-    line-height: var(--vl-input-inner-height);
+    height: var(--lk-input-inner-height);
+    line-height: var(--lk-input-inner-height);
     padding: 0;
     outline: none;
     border: none;
     background: none;
     box-sizing: border-box;
     &::placeholder {
-      color: var(--vl-input-placeholder-color);
+      color: var(--lk-input-placeholder-color);
     }
   }
-  .vl-icon {
+  .lk-icon {
     height: inherit;
     line-height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all var(--vl-transition-duration);
+    transition: all var(--lk-transition-duration);
     margin-left: 8px;
   }
-  .vl-input__clear,
-  .vl-input__password {
-    color: var(--vl-input-icon-color);
+  .lk-input__clear,
+  .lk-input__password {
+    color: var(--lk-input-icon-color);
     font-size: 14px;
     cursor: pointer;
     &:hover {
-      color: var(--vl-input-clear-hover-color);
+      color: var(--lk-input-clear-hover-color);
     }
   }
 }

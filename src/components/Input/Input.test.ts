@@ -19,16 +19,16 @@ describe("Input", () => {
       }
     });
     // classes
-    expect(wrapper.classes()).toContain("vl-input--small");
+    expect(wrapper.classes()).toContain("lk-input--small");
     expect(wrapper.classes()).toContain("is-prepend");
     // should render input
     expect(wrapper.find("input").exists()).toBeTruthy();
     expect(wrapper.get("input").attributes("type")).toBe("text");
     // slots
-    expect(wrapper.find(".vl-input__prepend").exists()).toBeTruthy();
-    expect(wrapper.get(".vl-input__prepend").text()).toBe("prepend");
-    expect(wrapper.find(".vl-input__prefix").exists()).toBeTruthy();
-    expect(wrapper.get(".vl-input__prefix").text()).toBe("prefix");
+    expect(wrapper.find(".lk-input__prepend").exists()).toBeTruthy();
+    expect(wrapper.get(".lk-input__prepend").text()).toBe("prepend");
+    expect(wrapper.find(".lk-input__prefix").exists()).toBeTruthy();
+    expect(wrapper.get(".lk-input__prefix").text()).toBe("prefix");
 
     // textarea
     const wrapper2 = mount(Input, {
@@ -77,14 +77,14 @@ describe("Input", () => {
       }
     });
     // 不出现对应的 Icon 区域
-    expect(wrapper.find(".vl-input__clear").exists()).toBeFalsy();
+    expect(wrapper.find(".lk-input__clear").exists()).toBeFalsy();
     const input = wrapper.get("input");
     await input.trigger("focus");
     expect(wrapper.emitted()).toHaveProperty("focus");
     // 出现 Icon 区域
-    expect(wrapper.find(".vl-input__clear").exists()).toBeTruthy();
+    expect(wrapper.find(".lk-input__clear").exists()).toBeTruthy();
     // 点击值变为空并且消失
-    await wrapper.get(".vl-input__clear").trigger("click");
+    await wrapper.get(".lk-input__clear").trigger("click");
     expect(input.element.value).toBe("");
     // 点击值变为空并且消失, 特别注意这里不仅仅会触发 clear 事件, 对应的 input 以及 change 应该都会被触发
     expect(wrapper.emitted()).toHaveProperty("clear");
@@ -109,17 +109,17 @@ describe("Input", () => {
       }
     });
     // 不出现对应的 Icon 区域 , 因为当前值为空
-    expect(wrapper.find(".vl-input__password").exists()).toBeFalsy();
+    expect(wrapper.find(".lk-input__password").exists()).toBeFalsy();
     const input = wrapper.get("input");
     expect(input.element.type).toBe("password");
     // 出现 Icon 区域, 并且 Icon 为特点的图标
     await input.setValue("123");
-    const eyeIcon = wrapper.find(".vl-input__password");
+    const eyeIcon = wrapper.find(".lk-input__password");
     expect(eyeIcon.exists()).toBeTruthy();
     expect(eyeIcon.attributes("icon")).toBe("eye-slash");
     // 点击值会切换 input 类型, 并且图标的 Icon 会切换
     await eyeIcon.trigger("click");
     expect(input.element.type).toBe("text");
-    expect(wrapper.find(".vl-input__password").attributes("icon")).toBe("eye");
+    expect(wrapper.find(".lk-input__password").attributes("icon")).toBe("eye");
   });
 });

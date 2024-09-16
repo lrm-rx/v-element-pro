@@ -9,12 +9,13 @@ import { VCollapse, VCollapseItem } from "@/components/Collapse";
 import VTooltip from "@/components/Tooltip";
 import VDropdown from "@/components/Dropdown";
 import VMessage from "@/components/Message";
+import VInput from "@/components/Input";
 import { createMessage } from "@/components/Message";
 
 import "./styles/index.css";
 
 library.add(fas);
-const components = [VButton, VIcon, VAlert, VCollapse, VCollapseItem, VTooltip, VDropdown, VMessage];
+const components = [VButton, VIcon, VAlert, VCollapse, VCollapseItem, VTooltip, VDropdown, VMessage, VInput];
 const install = (app: App) => {
   components.forEach(component => {
     app.component(component.name, component);
@@ -22,7 +23,7 @@ const install = (app: App) => {
 };
 
 /** 这里将组件导出，是为了在单独使用组件时，可以按需引入 */
-export { VButton, VIcon, VAlert, VCollapse, VCollapseItem, VTooltip, VDropdown, VMessage, createMessage };
+export { VButton, VIcon, VAlert, VCollapse, VCollapseItem, VTooltip, VDropdown, VMessage, VInput, createMessage };
 
 export default {
   install
@@ -41,5 +42,6 @@ declare module "vue" {
     VTooltip: typeof VTooltip;
     VDropdown: typeof VDropdown;
     VMessage: typeof VMessage;
+    VInput: typeof VInput;
   }
 }

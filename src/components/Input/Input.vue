@@ -1,9 +1,9 @@
 <template>
   <div
-    class="vl-input"
+    class="lk-input"
     :class="{
-      [`vl-input--${type}`]: type,
-      [`vl-input--${size}`]: size,
+      [`lk-input--${type}`]: type,
+      [`lk-input--${size}`]: size,
       'is-disabled': disabled,
       'is-prepend': $slots.prepend,
       'is-append': $slots.append,
@@ -15,16 +15,16 @@
     <!-- input -->
     <template v-if="type !== 'textarea'">
       <!-- prepend slot -->
-      <div v-if="$slots.prepend" class="vl-input__prepend">
+      <div v-if="$slots.prepend" class="lk-input__prepend">
         <slot name="prepend"></slot>
       </div>
-      <div class="vl-input__wrapper">
+      <div class="lk-input__wrapper">
         <!-- prefix slot -->
-        <span v-if="$slots.prefix" class="vl-input__prefix">
+        <span v-if="$slots.prefix" class="lk-input__prefix">
           <slot name="prefix"></slot>
         </span>
         <input
-          class="vl-input__inner"
+          class="lk-input__inner"
           ref="inputRef"
           :="attrs"
           :type="showPassWord ? (passwordVisible ? 'text' : 'password') : type"
@@ -41,27 +41,27 @@
           @blur="handleBlur"
         />
         <!-- suffix slot -->
-        <span v-if="$slots.suffix || showClear || showPassWordArea" @click="keepFocus" class="vl-input__suffix">
+        <span v-if="$slots.suffix || showClear || showPassWordArea" @click="keepFocus" class="lk-input__suffix">
           <slot name="suffix"></slot>
-          <Icon icon="circle-xmark" v-if="showClear" class="vl-input__clear" @click="clear" @mousedown.prevent="NOOP" />
-          <Icon icon="eye" v-if="showPassWordArea && passwordVisible" class="vl-input__password" @click="togglePasswordVisible" />
+          <Icon icon="circle-xmark" v-if="showClear" class="lk-input__clear" @click="clear" @mousedown.prevent="NOOP" />
+          <Icon icon="eye" v-if="showPassWordArea && passwordVisible" class="lk-input__password" @click="togglePasswordVisible" />
           <Icon
             icon="eye-slash"
             v-if="showPassWordArea && !passwordVisible"
-            class="vl-input__password"
+            class="lk-input__password"
             @click="togglePasswordVisible"
           />
         </span>
       </div>
       <!-- append slot -->
-      <div v-if="$slots.append" class="vl-input__append">
+      <div v-if="$slots.append" class="lk-input__append">
         <slot name="append"></slot>
       </div>
     </template>
     <!-- textarea -->
     <template v-else>
       <textarea
-        class="vl-textarea__wrapper"
+        class="lk-textarea__wrapper"
         ref="inputRef"
         :="attrs"
         :disabled="disabled"
