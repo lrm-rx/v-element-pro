@@ -35,7 +35,7 @@ module.exports = {
 
     // typeScript (https://typescript-eslint.io/rules)
     "@typescript-eslint/no-unused-vars": "error", // 禁止定义未使用的变量
-    "@typescript-eslint/no-empty-function": "error", // 禁止空函数
+    "@typescript-eslint/no-empty-function": "off", // 禁止空函数
     "@typescript-eslint/prefer-ts-expect-error": "error", // 禁止使用 @ts-ignore
     "@typescript-eslint/ban-ts-comment": "error", // 禁止 @ts-<directive> 使用注释或要求在指令后进行描述
     "@typescript-eslint/no-inferrable-types": "off", // 可以轻松推断的显式类型可能会增加不必要的冗长

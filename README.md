@@ -11,3 +11,6 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 - 将需求中有行为的功能做成开发计划列表
 - 根据列表一项一项完成功能
 - 样式/测试等收尾工作
+
+调用测试:
+npx vitest Input

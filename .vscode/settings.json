@@ -32,6 +32,17 @@
   "[less]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["commitlint", "fontawesome", "fortawesome", "linebreak", "popperjs", "styl", "Vite", "vitepress", "Vnode"],
+  "cSpell.words": [
+    "commitlint",
+    "fontawesome",
+    "fortawesome",
+    "linebreak",
+    "popperjs",
+    "styl",
+    "Vite",
+    "vitepress",
+    "Vnode",
+    "xmark"
+  ],
   "eslint.validate": ["javascript", "javascriptreact", "typescript"]
 }
