@@ -11,4 +11,8 @@ const options2 = [
   { label: "testing", value: "3" },
   { label: "check", value: "4", disabled: true }
 ];
+setTimeout(() => {
+  test.value = "2";
+  console.log("更新");
+}, 2000);
 </script>

@@ -72,7 +72,7 @@
 defineOptions({
   name: "VSelect"
 });
-import { reactive, ref, computed, watch } from "vue";
+import { reactive, ref, computed, watch, nextTick } from "vue";
 import { isFunction, debounce } from "lodash-es";
 import type { SelectOption, SelectProps, SelectEmits, SelectStates } from "./types";
 import type { InputInstance } from "../Input";
@@ -104,6 +104,17 @@ const states = reactive<SelectStates>({
   loading: false,
   highlightIndex: -1
 });
+watch(
+  () => props.modelValue,
+  val => {
+    const newVal = findOption(val);
+    if (newVal) {
+      // todo
+      states.inputValue = newVal.label;
+      states.selectedOption.value = newVal.value;
+    }
+  }
+);
 const isDropdownShow = ref(false);
 const popperOptions = {
   modifiers: [

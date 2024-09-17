@@ -9,6 +9,7 @@ import { VCollapse, VCollapseItem } from "@/components/Collapse";
 import VTooltip from "@/components/Tooltip";
 import VDropdown from "@/components/Dropdown";
 import VMessage from "@/components/Message";
+import VNotification from "./components/Notification";
 import VInput from "@/components/Input";
 import VSwitch from "@/components/Switch";
 import VSelect from "./components/Select";
@@ -17,7 +18,20 @@ import { createMessage } from "@/components/Message";
 import "./styles/index.css";
 
 library.add(fas);
-const components = [VButton, VIcon, VAlert, VCollapse, VCollapseItem, VTooltip, VDropdown, VMessage, VInput, VSwitch, VSelect];
+const components = [
+  VButton,
+  VIcon,
+  VAlert,
+  VCollapse,
+  VCollapseItem,
+  VTooltip,
+  VDropdown,
+  VMessage,
+  VNotification,
+  VInput,
+  VSwitch,
+  VSelect
+];
 const install = (app: App) => {
   components.forEach(component => {
     app.component(component.name, component);
@@ -34,6 +48,7 @@ export {
   VTooltip,
   VDropdown,
   VMessage,
+  VNotification,
   VInput,
   VSwitch,
   VSelect,
@@ -57,6 +72,7 @@ declare module "vue" {
     VTooltip: typeof VTooltip;
     VDropdown: typeof VDropdown;
     VMessage: typeof VMessage;
+    VNotification: typeof VNotification;
     VInput: typeof VInput;
     VSwitch: typeof VSwitch;
     VSelect: typeof VSelect;
