@@ -86,9 +86,10 @@ defineOptions({
   inheritAttrs: false
 });
 import type { Ref } from "vue";
-import { ref, watch, computed, useAttrs, nextTick } from "vue";
+import { ref, watch, computed, useAttrs, nextTick, inject } from "vue";
 import type { InputProps, InputEmits } from "./types";
 import Icon from "../Icon/Icon.vue";
+import { formItemContextKey } from "../Form/types";
 const props = withDefaults(defineProps<InputProps>(), { type: "text", autocomplete: "off" });
 const emits = defineEmits<InputEmits>();
 const attrs = useAttrs();
@@ -96,6 +97,10 @@ const innerValue = ref(props.modelValue);
 const isFocus = ref(false);
 const passwordVisible = ref(false);
 const inputRef = ref() as Ref<HTMLInputElement>;
+const formItemContext = inject(formItemContextKey);
+const runValidation = (trigger?: string) => {
+  formItemContext?.validate(trigger).catch(e => console.error(e));
+};
 
 const showClear = computed(() => props.clearable && !props.disabled && !!innerValue.value && isFocus.value);
 const showPassWordArea = computed(() => props.showPassWord && !props.disabled && !!innerValue.value);
@@ -110,9 +115,11 @@ const keepFocus = async () => {
 const handleInput = () => {
   emits("update:modelValue", innerValue.value);
   emits("input", innerValue.value);
+  runValidation("input");
 };
 const handleChange = () => {
   emits("change", innerValue.value);
+  runValidation("change");
 };
 const handleFocus = (event: FocusEvent) => {
   isFocus.value = true;
@@ -121,6 +128,7 @@ const handleFocus = (event: FocusEvent) => {
 const handleBlur = (event: FocusEvent) => {
   isFocus.value = false;
   emits("blur", event);
+  runValidation("blur");
 };
 const clear = () => {
   innerValue.value = "";

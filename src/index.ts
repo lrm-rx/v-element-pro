@@ -13,7 +13,9 @@ import VNotification from "./components/Notification";
 import VInput from "@/components/Input";
 import VSwitch from "@/components/Switch";
 import VSelect from "./components/Select";
+import { VForm, VFormItem } from "./components/Form";
 import { createMessage } from "@/components/Message";
+import { createNotification } from "@/components/Notification";
 
 import "./styles/index.css";
 
@@ -30,7 +32,9 @@ const components = [
   VNotification,
   VInput,
   VSwitch,
-  VSelect
+  VSelect,
+  VForm,
+  VFormItem
 ];
 const install = (app: App) => {
   components.forEach(component => {
@@ -52,7 +56,10 @@ export {
   VInput,
   VSwitch,
   VSelect,
-  createMessage
+  VForm,
+  VFormItem,
+  createMessage,
+  createNotification
 };
 
 export default {
@@ -76,5 +83,7 @@ declare module "vue" {
     VInput: typeof VInput;
     VSwitch: typeof VSwitch;
     VSelect: typeof VSelect;
+    VForm: typeof VForm;
+    VFormItem: typeof VFormItem;
   }
 }
